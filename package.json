@@ -1,0 +1,31 @@
+{
+  "name": "authsystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedNegm5/AuthSystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedNegm5/AuthSystem/issues"
+  },
+  "homepage": "https://github.com/AhmedNegm5/AuthSystem#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwk-to-pem": "^2.0.7",
+    "mongoose": "^8.9.7",
+    "node-fetch": "^3.3.2",
+    "querystring": "^0.2.1"
+  },
+  "type": "module"
+}
