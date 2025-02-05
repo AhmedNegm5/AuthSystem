@@ -7,7 +7,7 @@ import {
   login,
   register,
   getUser,
-} from "../controllers/authController";
+} from "../controllers/authController.js";
 
 // 1. Google Login Endpoint
 router.get("/google", googleLogin);
