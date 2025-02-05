@@ -93,8 +93,9 @@ const googleCallback = async (req, res) => {
       // Create a JWT for our application
       const ourToken = generateToken(user._id);
 
-      // Redirect to frontend with our token
-      res.json({ token: ourToken });
+      res.redirect(`${process.env.FRONTEND_URL}/home?token=${ourToken}`);
+
+      // res.json({ token: ourToken });
     } catch (verificationError) {
       console.error("ID token verification error:", verificationError);
       return res.status(400).json({ error: "Invalid ID token" });
