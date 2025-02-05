@@ -93,7 +93,7 @@ const googleCallback = async (req, res) => {
       // Create a JWT for our application
       const ourToken = generateToken(user._id);
       res.json({ token: ourToken });
-      res.redirect(`${process.env.FRONTEND_URL}/home?token=${ourToken}`);
+      res.redirect(`${process.env.FRONTEND_URL}/home`);
 
       // res.json({ token: ourToken });
     } catch (verificationError) {
