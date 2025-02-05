@@ -6,7 +6,7 @@ import jwkToPem from "jwk-to-pem";
 import bcrypt from "bcryptjs";
 
 // 1. Google Login Endpoint
-exports.googleLogin = (req, res) => {
+const googleLogin = (req, res) => {
   const googleAuthURL =
     "https://accounts.google.com/o/oauth2/v2/auth?" +
     querystring.stringify({
@@ -19,7 +19,7 @@ exports.googleLogin = (req, res) => {
 };
 
 // 2. Google Callback Endpoint
-exports.googleCallback = async (req, res) => {
+const googleCallback = async (req, res) => {
   const { code } = req.query;
 
   try {
@@ -104,7 +104,7 @@ exports.googleCallback = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -133,7 +133,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.register = async (req, res) => {
+const register = async (req, res) => {
   const { email, password, name } = req.body;
 
   if (!email || !password || !name) {
@@ -160,7 +160,8 @@ exports.register = async (req, res) => {
 };
 
 // get user info
-exports.getUser = async (req, res) => {
+
+const getUser = async (req, res) => {
   try {
     const token = req.headers.authorization?.split(" ")[1];
     const decoded = verifyToken(token);
@@ -170,3 +171,5 @@ exports.getUser = async (req, res) => {
     res.status(500).json({ error: "User info not found" });
   }
 };
+
+export { googleLogin, googleCallback, login, register, getUser };
