@@ -1,13 +1,13 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const {
+import {
   googleLogin,
   googleCallback,
   login,
   register,
   getUser,
-} = require("../controllers/authController");
+} from "../controllers/authController";
 
 // 1. Google Login Endpoint
 router.get("/google", googleLogin);

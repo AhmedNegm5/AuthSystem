@@ -1,10 +1,9 @@
 import fetch from "node-fetch";
-const User = require("../models/userModel");
-const jwt = require("jsonwebtoken");
-const { generateToken, verifyToken } = require("../utils/jwt");
+import User from "../models/userModel";
+import { generateToken, verifyToken } from "../utils/jwt";
 import querystring from "querystring";
-const jwkToPem = require("jwk-to-pem");
-const bcrypt = require("bcryptjs");
+import jwkToPem from "jwk-to-pem";
+import bcrypt from "bcryptjs";
 
 // 1. Google Login Endpoint
 exports.googleLogin = (req, res) => {
