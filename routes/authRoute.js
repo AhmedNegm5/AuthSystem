@@ -21,4 +21,4 @@ router.post("/register", register);
 
 router.get("/me", getUser);
 
-module.exports = router;
+export default router;
